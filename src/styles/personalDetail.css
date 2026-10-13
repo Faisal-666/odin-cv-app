@@ -1,0 +1,51 @@
+form {
+    padding: .75em;
+}
+input:invalid {
+    outline: 1px solid red;
+}
+.content {
+    padding: .75em;
+}
+.content h3:not(.content h3:first-child) {
+    margin-top: .7em;
+}
+.content > span {
+    padding-left: 6px;
+}
+.input-wrapper label {
+    display: block;
+    font-size: 1.25em;
+    font-weight: 400;
+    padding-bottom: .3em;
+}
+.input-wrapper {
+    margin-bottom: .7em;
+}
+.input-wrapper input {
+    padding: .35em;
+    width: 100%;
+
+    font-size: 1em;
+}
+[type='submit'] {
+    border: none;
+    outline: none;
+
+    margin-top: .5em;
+    display: block;
+    font-weight: 500;
+    font-size: 1.3em;
+    padding: .3em .7em;
+
+    background-color: hsl(0, 0%, 5%);
+    color: whitesmoke;
+
+    margin-left: auto;
+    transition: .3s background-color, color, outline ease;
+}
+[type='submit']:hover {
+    background-color: whitesmoke;
+    color:  hsl(0, 0%, 5%);
+    outline: 2px dashed hsl(0, 0%, 5%);
+}
