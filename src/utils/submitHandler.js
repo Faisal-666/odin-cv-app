@@ -1,6 +1,7 @@
-const submitHandler = (e, setter, formData) => {
+const submitHandler = (e, setter) => {
     e.preventDefault();
-    
+    const formData = Object.fromEntries(new FormData(e.target).entries());
+
     setter(formData);
 };
 

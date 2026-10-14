@@ -9,11 +9,8 @@ const FormPersonalDetail = ({ personalInfo, handleSubmit }) => {
         address
     } = personalInfo;
 
-    const formRef = useRef(null);
-    const getFormObj = () => Object.fromEntries(new FormData(formRef.current).entries());
-
     return (
-        <form ref={formRef} onSubmit={(e) => handleSubmit(e, getFormObj())}>
+        <form onSubmit={handleSubmit}>
 
             <div className='input-wrapper'>
                 <label htmlFor='fullName'>Fullname</label>
