@@ -50,7 +50,10 @@ const App = () => {
                 name='Educational Details'
                 icon='akar-icons:circle-plus-fill'
                 status={active}
-                onEdit={(key) => handleToggle(key)}
+                onEdit={(key) => {
+                    handleToggle(key);
+                    setOnEdit('');
+                }}
                 form={
                     <FormEducational
                         data={onEditData}

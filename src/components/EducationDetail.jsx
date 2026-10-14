@@ -1,12 +1,15 @@
 import style from '../styles/educationalDetail.module.css';
 
 const EducationDetail = ({ data, onEdit, onDelete }) => {
-    const { id, education, institution, city } = data;
+    const { id, education, institution, city, startDate, endDate } = data;
     
     return (
         <div className={style.education}>
             <div className='education-detail'>
-                <h3>{education}</h3>
+                <h3>
+                    {education} |
+                    <small className={style.timeline}>{` ( ${startDate} to ${endDate} )`}</small>
+                </h3>
                 <span>{`${institution}, ${city}`}</span>
             </div>
 

@@ -1,5 +1,5 @@
 const FormEducational = ({ data, handleSubmit, submitEdit }) => {
-    const { education, institution, city } = data;
+    const { education, institution, city, startDate, endDate } = data;
     const onEdit = data !== '';
 
     return (
@@ -36,7 +36,29 @@ const FormEducational = ({ data, handleSubmit, submitEdit }) => {
                     name='city'
                     required
                     defaultValue={city}
-                    placeholder={city ?? 'e.g. Jaka rta'}
+                    placeholder={city ?? 'e.g. Jakarta'}
+                />
+            </div>
+
+            <div className='input-wrapper'>
+                <label htmlFor="startDate">Start date</label>
+                <input
+                    type="date"
+                    name="startDate"
+                    id="startDate"
+                    required
+                    defaultValue={startDate}
+                />
+            </div>
+
+            <div className='input-wrapper'>
+                <label htmlFor="endDate">End date</label>
+                <input
+                    type="date"
+                    name="endDate"
+                    id="endDate"
+                    required
+                    defaultValue={endDate}
                 />
             </div>
 

@@ -1,4 +1,5 @@
 .education {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -20,4 +21,7 @@
     & .tool {
         opacity: 1;
     }
+}
+.timeline {
+    font-weight: initial;
 }
