@@ -1,0 +1,23 @@
+.education {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0.75em;
+    margin: .25em 0;
+}
+.toolContainer {
+    margin-right: .5em;
+}
+.tool {
+    font-size: 1.5em;
+    margin-right: .7em;
+    opacity: .5;
+}
+.education:hover {
+    background-color: hsl(0, 0%, 85%);
+    
+    & .tool {
+        opacity: 1;
+    }
+}

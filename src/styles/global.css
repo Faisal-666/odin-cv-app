@@ -26,6 +26,9 @@ h3 {
 span {
     color: var(--text-muted);
 }
+[icon] {
+    cursor: pointer;
+}
 button {
     cursor: pointer;
 }

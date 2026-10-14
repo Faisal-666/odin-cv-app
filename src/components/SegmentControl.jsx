@@ -1,6 +1,6 @@
 import style from '../styles/segmentControl.module.css';
 
-const SegmentControl = ({ name, form, content, onEdit, status }) => {
+const SegmentControl = ({ name, icon, form, content, onEdit, status }) => {
     const isEdit = status === name;
 
     return (
@@ -11,8 +11,7 @@ const SegmentControl = ({ name, form, content, onEdit, status }) => {
                 <iconify-icon
                     onClick={() => onEdit(name)} 
                     className={style.edit} 
-                    icon='akar-icons:edit'
-                    title='edit'
+                    icon={icon}
                     >
                 </iconify-icon>
             </div>
