@@ -5,8 +5,8 @@ const EducationDetail = ({ data, onEdit, onDelete }) => {
     
     return (
         <div className={style.education}>
-            <div className='education-detail'>
-                <h3>
+            <div className={style.educationDetail}>
+                <h3 className={style.header}>
                     {education} |
                     <small className={style.timeline}>{` ( ${startDate} to ${endDate} )`}</small>
                 </h3>

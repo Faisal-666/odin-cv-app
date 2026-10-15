@@ -10,6 +10,12 @@
 .company {
     font-weight: initial;
 }
+.experienceDetail {
+    margin-right: .3em;
+}
+.header {
+    margin-bottom: .2em;
+}
 .toolContainer {
     margin-right: .5em;
 }
@@ -29,4 +35,21 @@
     width: 100%;
     padding: .35em;
     resize: vertical;
+}
+@media (max-width: 320px) {
+    .experience {
+        padding: 0.5em 0;
+
+        & .toolContainer {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: .3em;
+
+           & .tool {
+                margin: 0;
+                font-size: 1.4em;
+           }
+        }
+    }
 }

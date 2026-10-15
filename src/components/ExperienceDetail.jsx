@@ -5,8 +5,8 @@ const ExperienceDetail = ({ data, onEdit, onDelete }) => {
 
     return (
         <div className={style.experience}>
-            <div className="exp-detail">
-                <h3>
+            <div className={style.header}>
+                <h3 className={style.experienceDetail}>
                     {position} |
                     <small className={style.company}>{` ${company}`}</small>
                 </h3>

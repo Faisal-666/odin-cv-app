@@ -18,3 +18,11 @@
     color: hsl(0, 0%, 5%);
     font-size: 1.75em;
 }
+@media (max-width: 320px) {
+    .header {
+        padding: .7em;
+    }
+    .content {
+        padding: .5em 0;
+    }
+}
