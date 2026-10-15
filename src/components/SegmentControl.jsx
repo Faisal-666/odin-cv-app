@@ -16,7 +16,7 @@ const SegmentControl = ({ name, icon, form, content, onEdit, status }) => {
                 </iconify-icon>
             </div>
 
-            <div>
+            <div className={style.content}>
                 {isEdit ? form : content}
             </div>
         </div>
