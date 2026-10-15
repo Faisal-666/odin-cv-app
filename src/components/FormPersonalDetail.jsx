@@ -1,5 +1,4 @@
 import '../styles/personalDetail.css';
-import { useRef } from 'react';
 
 const FormPersonalDetail = ({ personalInfo, handleSubmit }) => {
     const {
