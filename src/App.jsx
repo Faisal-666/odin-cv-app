@@ -10,6 +10,10 @@ import FormEducational from './components/FormEducational';
 import EducationDetail from './components/EducationDetail';
 import useEducationalDetails from './hooks/educationalDetail';
 
+import ExperienceForm from './components/ExperienceForm';
+import ExperienceDetail from './components/ExperienceDetail';
+import useExperienceDetails from './hooks/experienceDetail';
+
 import useEdit from './hooks/onEdit';
 import submitHandler from './utils/submitHandler';
 
@@ -24,69 +28,121 @@ const App = () => {
         updateEducation,
         removeEducation 
     } = useEducationalDetails();
+    const {
+        experienceDetails,
+        getById: getExpById,
+        addExperience,
+        updateExperience,
+        removeExperience
+    } = useExperienceDetails();
 
     return (
-        <section className='formDetails'>
-            <SegmentControl 
-                name='Personal Details'
-                icon='akar-icons:edit'
-                status={active}
-                onEdit={(key) => handleToggle(key)}
-                form={
-                    <FormPersonalDetail 
-                        personalInfo={personalInfo}
-                        handleSubmit={(e) => {
-                            submitHandler(e, setPersonalInfo);
-                            handleToggle('Personal Details');
-                        }}
-                    />
-                }
-                content={
-                    <PersonalDetail personalDetail={personalInfo}/>
-                }
-            />
+        <>
+            <h1>Cv App</h1>
 
-            <SegmentControl 
-                name='Educational Details'
-                icon='akar-icons:circle-plus-fill'
-                status={active}
-                onEdit={(key) => {
-                    handleToggle(key);
-                    setOnEdit('');
-                }}
-                form={
-                    <FormEducational
-                        data={onEditData}
-                        handleSubmit={(e) => {
-                            submitHandler(e, addEducation);
-                            handleToggle('Educational Details');
-                        }}
-                        submitEdit={(e) => {
-                            submitHandler(e, (props) => {
-                                updateEducation(onEditData.id, props);
-                            });
-                            handleToggle('Educational Details');
-                        }}
-                    />
-                }
-                content={
-                    !educationalDetail.length
-                        ? <h3 className='edu-empty-state'>Empty</h3>
-                        : educationalDetail.map(data => (
-                            <EducationDetail
-                                key={data.id}
-                                data={data} 
-                                onEdit={(id) => {
-                                    const current = getDataById(id);
-                                    setOnEdit(current);
-                                    handleToggle('Educational Details');
-                                }}
-                                onDelete={removeEducation}
-                            />
-                        ))
-                }
-            />
-        </section>
+            <main className='formDetails'>
+                <SegmentControl 
+                    name='Personal Details'
+                    icon='akar-icons:edit'
+                    status={active}
+                    onEdit={(key) => handleToggle(key)}
+                    form={
+                        <FormPersonalDetail 
+                            personalInfo={personalInfo}
+                            handleSubmit={(e) => {
+                                submitHandler(e, setPersonalInfo);
+                                handleToggle('Personal Details');
+                            }}
+                        />
+                    }
+                    content={
+                        <PersonalDetail personalDetail={personalInfo}/>
+                    }
+                />
+
+                <SegmentControl 
+                    name='Educational Details'
+                    icon='akar-icons:circle-plus-fill'
+                    status={active}
+                    onEdit={(key) => {
+                        handleToggle(key);
+                        setOnEdit('');
+                    }}
+                    form={
+                        <FormEducational
+                            data={onEditData}
+                            handleSubmit={(e) => {
+                                submitHandler(e, addEducation);
+                                handleToggle('Educational Details');
+                            }}
+                            submitEdit={(e) => {
+                                submitHandler(e, (props) => {
+                                    updateEducation(onEditData.id, props);
+                                });
+                                handleToggle('Educational Details');
+                            }}
+                        />
+                    }
+                    content={
+                        !educationalDetail.length
+                            ? <h3 className='empty-state'>Empty</h3>
+                            : educationalDetail.map(data => (
+                                <EducationDetail
+                                    key={data.id}
+                                    data={data} 
+                                    onEdit={(id) => {
+                                        const current = getDataById(id);
+                                        setOnEdit(current);
+                                        handleToggle('Educational Details');
+                                    }}
+                                    onDelete={removeEducation}
+                                />
+                            ))
+                    }
+                />
+
+                <SegmentControl
+                    name='Practical Experience'
+                    icon='akar-icons:circle-plus-fill'
+                    status={active}
+                    onEdit={(key) => {
+                        handleToggle(key);
+                        setOnEdit('');
+                    }}
+                    form={
+                        <ExperienceForm 
+                            data={onEditData}
+                            handleSubmit={(e) => {
+                                submitHandler(e, addExperience);
+                                handleToggle('Practical Experience');
+                            }}
+                            submitEdit={(e) => {
+                                submitHandler(e, (props) => {
+                                    updateExperience(onEditData.id, props);
+                                });
+                                handleToggle('Practical Experience');
+                            }}
+                        />
+                    }
+                    content={
+                        !experienceDetails.length
+                            ? <h3 className='empty-state'>Empty</h3>
+                            : experienceDetails.map(data => (
+                                <ExperienceDetail
+                                    key={data.id}
+                                    data={data}
+                                    onEdit={(id) => {
+                                        const current = getExpById(id);
+                                        setOnEdit(current);
+                                        handleToggle('Practical Experience');
+                                    }}
+                                    onDelete={removeExperience}
+                                />
+                            ))
+                    }
+                />
+            </main>
+        </>
     );
 };
 
