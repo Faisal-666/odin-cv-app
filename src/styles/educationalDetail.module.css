@@ -1,50 +1,76 @@
 .education {
-    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1rem;
 
-    padding: 0.75em;
-    margin: .25em 0;
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid hsl(0, 0%, 92%);
+    transition: background-color 0.2s ease;
 }
+
+.education:last-child {
+    border-bottom: none;
+}
+
 .educationDetail {
-    margin-right: .3em;
+    min-width: 0;
+    margin-right: 0.3rem;
 }
+
 .header {
-    margin-bottom: .2em;
+    margin-bottom: 0.3rem;
+    overflow-wrap: anywhere;
 }
-.toolContainer {
-    margin-right: .5em;
-}
-.tool {
-    font-size: 1.5em;
-    margin-right: .7em;
-    opacity: .5;
-}
-.education:hover {
-    background-color: hsl(0, 0%, 85%);
-    
-    & .tool {
-        opacity: 1;
-    }
-}
+
 .timeline {
-    font-weight: initial;
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: var(--text-muted);
 }
-@media (max-width: 320px) {
+
+.toolContainer {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 0.75rem;
+}
+
+.tool {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    opacity: 0.7;
+    transition:
+        color 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.tool:hover {
+    color: var(--text-color);
+    opacity: 1;
+}
+
+.education:hover {
+    background-color: var(--surface-color);
+}
+
+@media (max-width: 480px) {
     .education {
-        padding: 0.5em 0;
+        align-items: flex-start;
+        gap: 0.6rem;
+        padding: 0.85rem 1rem;
+    }
 
-        & .toolContainer {
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            gap: .3em;
+    .toolContainer {
+        gap: 0.6rem;
+        padding-top: 0.15rem;
+    }
 
-           & .tool {
-                margin: 0;
-                font-size: 1.4em;
-           }
-        }
+    .tool {
+        font-size: 1.1rem;
+    }
+
+    .timeline {
+        font-size: 0.8rem;
     }
 }

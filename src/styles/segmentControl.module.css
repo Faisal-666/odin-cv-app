@@ -3,26 +3,37 @@
     justify-content: space-between;
     align-items: center;
 
-    padding: .7em 1.5em;
-    border-bottom: 1px solid black;
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--border-muted);
+    background-color: var(--surface-color);
 }
+
 .content {
     padding: .75em 0;
 }
+
 .content.open {
     display: block;
     transform: translateY(0);
 }
+
 .edit {
     cursor: pointer;
-    color: hsl(0, 0%, 5%);
-    font-size: 1.75em;
+    color: var(--text-muted);
+    font-size: 1.4rem;
+    transition: color 0.2s ease;
 }
-@media (max-width: 320px) {
+
+.edit:hover {
+    color: var(--text-color);
+}
+
+@media (max-width: 480px) {
     .header {
-        padding: .7em;
+        padding: 0.85rem 1rem;
     }
+
     .content {
-        padding: .5em 0;
+        padding: 0.5rem 0;
     }
 }

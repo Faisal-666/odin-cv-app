@@ -1,51 +1,79 @@
 form {
-    padding: .75em;
+    padding: 1rem 1.25rem;
 }
+
 input:invalid {
-    outline: 1px solid red;
+    box-shadow: none;
 }
+
 .content {
-    padding: .75em;
+    padding: 1rem 1.25rem;
 }
-.content h3:not(.content h3:first-child) {
-    margin-top: .7em;
+
+.content h3:not(:first-child) {
+    margin-top: 0.85rem;
 }
-.content > span {
-    padding-left: 6px;
+
+.content>span {
+    display: block;
+    padding-left: 0.15rem;
+    font-size: 0.95rem;
 }
+
+.input-wrapper {
+    margin-bottom: 1rem;
+}
+
 .input-wrapper label {
     display: block;
-    font-size: 1.25em;
-    font-weight: 400;
-    padding-bottom: .3em;
-}
-.input-wrapper {
-    margin-bottom: .7em;
-}
-.input-wrapper input {
-    padding: .35em;
-    width: 100%;
-
-    font-size: 1em;
-}
-[type='submit'] {
-    border: none;
-    outline: none;
-
-    margin-top: .5em;
-    display: block;
+    margin-bottom: 0.4rem;
+    font-size: 0.9rem;
     font-weight: 500;
-    font-size: 1.3em;
-    padding: .3em .7em;
-
-    background-color: hsl(0, 0%, 5%);
-    color: whitesmoke;
-
-    margin-left: auto;
-    transition: .3s background-color, color, outline ease;
+    color: var(--text-color);
 }
+
+.input-wrapper input,
+.input-wrapper textarea {
+    display: block;
+    width: 100%;
+    min-height: 42px;
+    padding: 0.6rem 0.75rem;
+    font-size: 0.95rem;
+}
+
+[type='submit'] {
+    display: block;
+    margin: 1.25rem 0 0 auto;
+    padding: 0.6rem 1.25rem;
+
+    border: 1px solid var(--text-color);
+    border-radius: 6px;
+    background-color: var(--text-color);
+    color: white;
+
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
 [type='submit']:hover {
-    background-color: whitesmoke;
-    color:  hsl(0, 0%, 5%);
-    outline: 2px dashed hsl(0, 0%, 5%);
+    background-color: white;
+    color: var(--text-color);
+}
+
+[type='submit']:focus-visible {
+    outline: 2px solid var(--text-muted);
+    outline-offset: 3px;
+}
+
+@media (max-width: 480px) {
+    form {
+        padding: 0.85rem 1rem;
+    }
+
+    .content {
+        padding: 0.85rem 1rem;
+    }
 }

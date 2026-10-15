@@ -1,16 +1,36 @@
 h1 {
     text-align: center;
-    margin: 1em;
+    font-size: 1.8rem;
+    font-weight: 650;
+    letter-spacing: -0.5px;
+    margin: 0 0 1.5rem;
 }
+
 header {
     background-color: var(--main-color);
     color: var(--text-color);
 
     padding: 1em;
 }
+
+.formDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.segment-control {
+    overflow: hidden;
+    border: 1px solid var(--border-muted);
+    border-radius: 10px;
+    background-color: white;
+}
+
 .empty-state {
     text-align: center;
-    margin: 2.5em 0;
-    padding: 1em 0;
-    opacity: .5;
+    margin: 1.5rem 0;
+    padding: 1rem 0;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    font-weight: 400;
 }

@@ -1,12 +1,17 @@
 :root {
-    --text-color: hsl(0, 0%, 5%);
-    --text-muted: hsl(0, 0%, 15%);
-    --border-muted: hsl(0, 0%, 25%);
+    --text-color: hsl(0, 0%, 10%);
+    --text-muted: hsl(0, 0%, 40%);
+    --border-muted: hsl(0, 0%, 85%);
+    --surface-color: hsl(0, 0%, 98%);
+    --main-color: hsl(0, 0%, 96%);
 }
+
 @font-face {
     font-family: 'google_sans';
     src: url('../assets/GoogleSans-VariableFont_GRAD\,opsz\,wght.ttf') format('truetype');
+    font-weight: 100 900;
 }
+
 *,
 *::before,
 *::after {
@@ -14,28 +19,65 @@
     margin: 0;
     box-sizing: border-box;
 }
+
 body {
     font-family: 'google_sans', sans-serif;
-    margin: 0 10%;
+    color: var(--text-color);
+    background-color: white;
+    line-height: 1.5;
+    margin: 0 auto;
+    padding: 2rem 1.25rem;
+    max-width: 900px;
 }
+
 h1,
 h2,
 h3 {
     color: var(--text-color);
+    line-height: 1.3;
 }
+
+h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
 span {
     color: var(--text-muted);
 }
-[icon] {
-    cursor: pointer;
-}
+
+iconify-icon,
 button {
     cursor: pointer;
 }
-input {
-    border: none;
-    outline: 1px dashed var(--border-muted);
+
+input,
+textarea {
+    font: inherit;
+    color: var(--text-color);
 }
-input:focus {
-    outline: .5px solid var(--border-muted);
+
+input,
+textarea {
+    border: 1px solid var(--border-muted);
+    border-radius: 6px;
+    background-color: white;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+input:focus,
+textarea:focus {
+    border-color: var(--text-color);
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 1.25rem 0.75rem;
+    }
 }
